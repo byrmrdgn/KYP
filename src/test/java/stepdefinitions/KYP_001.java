@@ -21,7 +21,7 @@ public class KYP_001 {
     @Given("kullanici devam butonuna tiklar")
     public void kullanici_devam_butonuna_tiklar() {
         page.devamButonu.click();
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
     @Then("kullanici hesap olustur sayfasinda girilmesi gereken bilgiler altinda uyarilar görur")
     public void kullanici_hesap_olustur_sayfasinda_girilmesi_gereken_bilgiler_altinda_uyarilar_görur() {
@@ -50,5 +50,16 @@ public class KYP_001 {
         page.uudestanSalasananLaatikko.sendKeys(ConfigurationReader.getProperty("sifre_tekrari"));
     }
 
+    @Given("kullanici ad kutusuna {string} girer")
+    public void kullanici_ad_kutusuna_girer(String string) {
+        page.etuniminLaatikko.sendKeys(ConfigurationReader.getProperty("ad"));
+    }
+    @Given("kullanici soyad kutusunu bos birakir")
+    public void kullanici_soyad_kutusunu_bos_birakir() {
+    }
+
+    @Given("kullanici email kutusunu bos birakir")
+    public void kullanici_email_kutusunu_bos_birakir() {
+    }
 
 }

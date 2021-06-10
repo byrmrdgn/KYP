@@ -16,3 +16,25 @@ Scenario: kullanici gerekli bilgileri yazmadan giris yapamamali
     And kullanici sifre kutusuna "sifresini" girer
     And kullanici sifre tekrar kutusuna "sifresini" girer
     And kullanici devam butonuna tiklar
+
+  @soyisimsizGiris
+  Scenario: kullanici soyadini yazmadan uye olmayi dener
+    Given kullanici "kitapyurdu" adresine gider
+    And kullanici uye ol linkine tiklar
+    And kullanici ad kutusuna "adini" girer
+    And kullanici soyad kutusunu bos birakir
+    And kullanici email kutusuna "email adresini" girer
+    And kullanici sifre kutusuna "sifresini" girer
+    And kullanici sifre tekrar kutusuna "sifresini" girer
+    And kullanici devam butonuna tiklar
+
+  @emailsizGiris
+  Scenario: kullanici email yazmadan uye olmayi dener
+    Given kullanici "kitapyurdu" adresine gider
+    And kullanici uye ol linkine tiklar
+    And kullanici ad kutusuna "adini" girer
+    And kullanici soyad kutusuna "soyadini" girer
+    And kullanici email kutusunu bos birakir
+    And kullanici sifre kutusuna "sifresini" girer
+    And kullanici sifre tekrar kutusuna "sifresini" girer
+    And kullanici devam butonuna tiklar
