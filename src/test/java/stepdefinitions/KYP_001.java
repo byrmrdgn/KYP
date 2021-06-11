@@ -61,5 +61,9 @@ public class KYP_001 {
     @Given("kullanici email kutusunu bos birakir")
     public void kullanici_email_kutusunu_bos_birakir() {
     }
+    @Given("kullanici sifre kutusunu bos birakir")
+    public void kullanici_sifre_kutusunu_bos_birakir() {
+
+    }
 
 }
