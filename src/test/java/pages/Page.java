@@ -32,5 +32,5 @@ public class Page {
     public WebElement salasananLaatikko;
 
     @FindBy(name = "confirm")
-    public WebElement uudestanSalasananLaatikko;
+    public WebElement sifreTekrarKutusu;
 }

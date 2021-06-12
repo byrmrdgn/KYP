@@ -52,7 +52,7 @@ public class KYP_001 {
 
     @Given("kullanici sifre tekrar kutusuna {string} girer")
     public void kullanici_sifre_tekrar_kutusuna_girer(String string) {
-        page.uudestanSalasananLaatikko.sendKeys(ConfigurationReader.getProperty("sifre_tekrari"));
+        page.sifreTekrarKutusu.sendKeys(ConfigurationReader.getProperty("sifre_tekrari"));
     }
 
     @Given("kullanici ad kutusuna {string} girer")
@@ -71,4 +71,9 @@ public class KYP_001 {
 
     @Given("kullanici sifre tekrar kutusunu bos birakir")
     public void kullanici_sifre_tekrar_kutusunu_bos_birakir() {}
+
+    @Given("kullanici sifre tekrar kutusuna {string} yanlis girer")
+    public void kullanici_sifre_tekrar_kutusuna_yanlis_girer(String string) {
+        page.sifreTekrarKutusu.sendKeys(ConfigurationReader.getProperty("yalnis_sifre"));
+    }
 }

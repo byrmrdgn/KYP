@@ -50,7 +50,7 @@ Scenario: kullanici gerekli bilgileri yazmadan giris yapamamali
     And kullanici sifre tekrar kutusuna "sifresini" girer
     And kullanici devam butonuna tiklar
 
-  @tekrarsifresizGiris
+  @tekrarSifresizGiris
   Scenario: kullanici tekrar sifresini yazmadan uye olmayi dener
     Given kullanici "kitapyurdu" adresine gider
     And kullanici uye ol linkine tiklar
@@ -59,4 +59,15 @@ Scenario: kullanici gerekli bilgileri yazmadan giris yapamamali
     And kullanici email kutusuna "email adresini" girer
     And kullanici sifre kutusuna "sifresini" girer
     And kullanici sifre tekrar kutusunu bos birakir
+    And kullanici devam butonuna tiklar
+
+  @yanlisSifreIleGiris
+  Scenario: kullanici sifre yazmadan uye olmayi dener
+    Given kullanici "kitapyurdu" adresine gider
+    And kullanici uye ol linkine tiklar
+    And kullanici ad kutusuna "adini" girer
+    And kullanici soyad kutusuna "soyadini" girer
+    And kullanici email kutusuna "email adresini" girer
+    And kullanici sifre kutusuna "sifresini" girer
+    And kullanici sifre tekrar kutusuna "sifresini" yanlis girer
     And kullanici devam butonuna tiklar
