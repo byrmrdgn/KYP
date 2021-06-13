@@ -33,4 +33,7 @@ public class Page {
 
     @FindBy(name = "confirm")
     public WebElement sifreTekrarKutusu;
+
+    @FindBy(name = "//input[@name='agree']")
+    public WebElement KisiVerilerininKorunmasi;
 }

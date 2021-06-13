@@ -26,11 +26,6 @@ public class KYP_001 {
         //Driver.closeDriver();
     }
 
-    @Then("kullanici hesap olustur sayfasinda girilmesi gereken bilgiler altinda uyarilar görur")
-    public void kullanici_hesap_olustur_sayfasinda_girilmesi_gereken_bilgiler_altinda_uyarilar_görur() {
-        page.adKutusuAltindakiUyari.isDisplayed();
-    }
-
     @Given("kullanici ad kutusunu bos birakir")
     public void kullanici_ad_kutusunu_bos_birakir() {}
     
@@ -76,4 +71,7 @@ public class KYP_001 {
     public void kullanici_sifre_tekrar_kutusuna_yanlis_girer(String string) {
         page.sifreTekrarKutusu.sendKeys(ConfigurationReader.getProperty("yalnis_sifre"));
     }
+
+    @Given("kullanici kisisel verilerin korunmasini kabul etmez")
+    public void kullanici_kisisel_verilerin_korunmasini_kabul_etmez() {}
 }
