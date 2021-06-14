@@ -74,4 +74,9 @@ public class KYP_001 {
 
     @Given("kullanici kisisel verilerin korunmasini kabul etmez")
     public void kullanici_kisisel_verilerin_korunmasini_kabul_etmez() {}
+
+    @Given("kullanici kisisel verilerin korunmasini kabul eder")
+    public void kullanici_kisisel_verilerin_korunmasini_kabul_eder() {
+       page.kisiVerilerininKorunmasi.click();
+    }
 }

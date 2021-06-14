@@ -84,3 +84,15 @@ Feature: Kullanici gerekli bilgileri yazmadan giris yapamamali
     And kullanici sifre tekrar kutusuna "sifresini" girer
     And kullanici kisisel verilerin korunmasini kabul etmez
     And kullanici devam butonuna tiklar
+
+  @GecerliUyelik
+  Scenario: kullanici kosullari yerine getirerek uye olur
+    Given kullanici "kitapyurdu" adresine gider
+    And kullanici uye ol linkine tiklar
+    And kullanici ad kutusuna "adini" girer
+    And kullanici soyad kutusuna "soyadini" girer
+    And kullanici email kutusuna "email adresini" girer
+    And kullanici sifre kutusuna "sifresini" girer
+    And kullanici sifre tekrar kutusuna "sifresini" girer
+    And kullanici kisisel verilerin korunmasini kabul eder
+    And kullanici devam butonuna tiklar
