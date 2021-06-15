@@ -20,7 +20,7 @@ public class Page {
     public WebElement adKutusuAltindakiUyari;
 
     @FindBy (name = "firstname")
-    public WebElement etuniminLaatikko;
+    public WebElement adKutusu;
 
     @FindBy (name = "lastname")
     public WebElement sukuniminLaatikko;

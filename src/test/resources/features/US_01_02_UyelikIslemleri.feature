@@ -2,13 +2,13 @@
 Feature: Kullanici gerekli bilgileri yazmadan giris yapamamali
 
   @uyeKayitSayfasi
-  Scenario: kullanici kitap yurdu uyelik sayfasina gider
+  Scenario: Kullanici kitap yurdu uyelik sayfasina gider
   Given kullanici "kitapyurdu" adresine gider
   And kullanici uye ol linkine tiklar
   And kullanici devam butonuna tiklar
 
   @isimsizGiris
-  Scenario: kullanici adini yazmadan uye olmayi dener
+  Scenario: Kullanici adini yazmadan uye olmayi dener
     Given kullanici "kitapyurdu" adresine gider
     And kullanici uye ol linkine tiklar
     And kullanici ad kutusunu bos birakir
@@ -19,7 +19,7 @@ Feature: Kullanici gerekli bilgileri yazmadan giris yapamamali
     And kullanici devam butonuna tiklar
 
   @soyisimsizGiris
-  Scenario: kullanici soyadini yazmadan uye olmayi dener
+  Scenario: Kullanici soyadini yazmadan uye olmayi dener
     Given kullanici "kitapyurdu" adresine gider
     And kullanici uye ol linkine tiklar
     And kullanici ad kutusuna "adini" girer
@@ -30,7 +30,7 @@ Feature: Kullanici gerekli bilgileri yazmadan giris yapamamali
     And kullanici devam butonuna tiklar
 
   @emailsizGiris
-  Scenario: kullanici email adresini yazmadan uye olmayi dener
+  Scenario: Kullanici email adresini yazmadan uye olmayi dener
     Given kullanici "kitapyurdu" adresine gider
     And kullanici uye ol linkine tiklar
     And kullanici ad kutusuna "adini" girer
@@ -41,7 +41,7 @@ Feature: Kullanici gerekli bilgileri yazmadan giris yapamamali
     And kullanici devam butonuna tiklar
 
   @sifresizGiris
-  Scenario: kullanici sifre yazmadan uye olmayi dener
+  Scenario: Kullanici sifre yazmadan uye olmayi dener
     Given kullanici "kitapyurdu" adresine gider
     And kullanici uye ol linkine tiklar
     And kullanici ad kutusuna "adini" girer
@@ -52,7 +52,7 @@ Feature: Kullanici gerekli bilgileri yazmadan giris yapamamali
     And kullanici devam butonuna tiklar
 
   @tekrarSifresizGiris
-  Scenario: kullanici tekrar sifresini yazmadan uye olmayi dener
+  Scenario: Kullanici tekrar sifresini yazmadan uye olmayi dener
     Given kullanici "kitapyurdu" adresine gider
     And kullanici uye ol linkine tiklar
     And kullanici ad kutusuna "adini" girer
@@ -63,7 +63,7 @@ Feature: Kullanici gerekli bilgileri yazmadan giris yapamamali
     And kullanici devam butonuna tiklar
 
   @yanlisSifreIleGiris
-  Scenario: kullanici yanlis sifre yazarak uye olmayi dener
+  Scenario: Kullanici yanlis sifre yazarak uye olmayi dener
     Given kullanici "kitapyurdu" adresine gider
     And kullanici uye ol linkine tiklar
     And kullanici ad kutusuna "adini" girer
@@ -74,7 +74,7 @@ Feature: Kullanici gerekli bilgileri yazmadan giris yapamamali
     And kullanici devam butonuna tiklar
 
   @kisiselVerileriKabulEtmedenGiris
-  Scenario: kullanici kisisel verilerin korunmasini kabul etmeden uye olmayi dener
+  Scenario: Kullanici kisisel verilerin korunmasini kabul etmeden uye olmayi dener
     Given kullanici "kitapyurdu" adresine gider
     And kullanici uye ol linkine tiklar
     And kullanici ad kutusuna "adini" girer
@@ -86,10 +86,22 @@ Feature: Kullanici gerekli bilgileri yazmadan giris yapamamali
     And kullanici devam butonuna tiklar
 
   @GecerliUyelik
-  Scenario: kullanici kosullari yerine getirerek uye olur
+  Scenario: Kullanici kosullari yerine getirerek uye olur
     Given kullanici "kitapyurdu" adresine gider
     And kullanici uye ol linkine tiklar
     And kullanici ad kutusuna "adini" girer
+    And kullanici soyad kutusuna "soyadini" girer
+    And kullanici email kutusuna "email adresini" girer
+    And kullanici sifre kutusuna "sifresini" girer
+    And kullanici sifre tekrar kutusuna "sifresini" girer
+    And kullanici kisisel verilerin korunmasini kabul eder
+    And kullanici devam butonuna tiklar
+
+  @ayniEmailIleUyelik
+  Scenario: Kullanici ayni email adresi ile yeni bilgiler kullanarak uye olmayi dener
+    Given kullanici "kitapyurdu" adresine gider
+    And kullanici uye ol linkine tiklar
+    And kullanici ad kutusuna farkli bir "ad" girer
     And kullanici soyad kutusuna "soyadini" girer
     And kullanici email kutusuna "email adresini" girer
     And kullanici sifre kutusuna "sifresini" girer

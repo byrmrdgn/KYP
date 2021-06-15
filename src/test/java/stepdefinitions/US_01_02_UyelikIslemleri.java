@@ -7,7 +7,7 @@ import utilities.ConfigurationReader;
 import utilities.Driver;
 
 
-public class KYP_001 {
+public class US_01_02_UyelikIslemleri {
 
     Page page=new Page();
     @Given("kullanici {string} adresine gider")
@@ -52,7 +52,7 @@ public class KYP_001 {
 
     @Given("kullanici ad kutusuna {string} girer")
     public void kullanici_ad_kutusuna_girer(String string) {
-        page.etuniminLaatikko.sendKeys(ConfigurationReader.getProperty("ad"));
+        page.adKutusu.sendKeys(ConfigurationReader.getProperty("ad"));
     }
 
     @Given("kullanici soyad kutusunu bos birakir")
@@ -79,4 +79,14 @@ public class KYP_001 {
     public void kullanici_kisisel_verilerin_korunmasini_kabul_eder() {
        page.kisiVerilerininKorunmasi.click();
     }
+
+    @Given("kullanici ad kutusuna farkli bir {string} girer")
+    public void kullanici_ad_kutusuna_farkli_bir_girer(String string) {
+        page.adKutusu.sendKeys(ConfigurationReader.getProperty("ikinci_ad"));
+    }
+
+    /*
+        * Simdiye kadar gecersiz uyelik islemlerini, uye olma islemini ve ayni mail adresi ile uye olma islemini test ettik.
+     böylece US01 ve US02 bitmis oldu. Jira da US01 yapildi ve US02 Jirada yapilacak.
+     */
 }
