@@ -36,4 +36,10 @@ public class Page {
 
     @FindBy(xpath = "//input[@name='agree']")
     public WebElement kisiVerilerininKorunmasi;
+
+    @FindBy(xpath = "//a[.='Giriş Yap']")
+    public WebElement girisYapLinki;
+
+    @FindBy(xpath = "//button[@role='button']")
+    public WebElement girisYapButonu;
 }
