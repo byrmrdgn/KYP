@@ -23,7 +23,7 @@ public class Page {
     public WebElement adKutusu;
 
     @FindBy (name = "lastname")
-    public WebElement sukuniminLaatikko;
+    public WebElement soyadKutusu;
 
     @FindBy (name = "email")
     public WebElement emailKutusu;

@@ -37,7 +37,7 @@ public class US_01_02_UyelikIslemleri {
     
     @Given("kullanici soyad kutusuna {string} girer")
     public void kullanici_soyad_kutusuna_girer(String string) {
-        page.sukuniminLaatikko.sendKeys(ConfigurationReader.getProperty("soyad"));
+        page.soyadKutusu.sendKeys(ConfigurationReader.getProperty("soyad"));
     }
 
     @Given("kullanici email kutusuna {string} girer")
@@ -63,6 +63,11 @@ public class US_01_02_UyelikIslemleri {
 
     @Given("kullanici soyad kutusunu bos birakir")
     public void kullanici_soyad_kutusunu_bos_birakir() {}
+
+    @Given("kullanici soyad kutusuna gecersiz soyad girer")
+    public void kullanici_soyad_kutusuna_gecersiz_soyad_girer() {
+        page.soyadKutusu.sendKeys(ConfigurationReader.getProperty("gecersiz_soyad"));
+    }
 
     @Given("kullanici email kutusunu bos birakir")
     public void kullanici_email_kutusunu_bos_birakir() {}
