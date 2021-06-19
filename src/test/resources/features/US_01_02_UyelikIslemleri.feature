@@ -1,11 +1,16 @@
 @bilgisizGiris
-Feature: Kullanici gerekli bilgileri yazmadan giris yapamamali
+Feature: Kullanici gerekli bilgileri yazmadan uyelik islemi gerceklesmemeli
 
   @uyeKayitSayfasi
   Scenario: Kullanici kitap yurdu uyelik sayfasina gider
   Given kullanici "kitapyurdu" adresine gider
   And kullanici uye ol linkine tiklar
-  And kullanici devam butonuna tiklar
+
+  @VerisizUyeKayitIslemi
+  Scenario: Kullanici hicbir veri girmeden uye olmayi dener
+    Given kullanici "kitapyurdu" adresine gider
+    And kullanici uye ol linkine tiklar
+    And kullanici devam butonuna tiklar
 
   @isimsizGiris
   Scenario: Kullanici adini yazmadan uye olmayi dener
@@ -16,6 +21,19 @@ Feature: Kullanici gerekli bilgileri yazmadan giris yapamamali
     And kullanici email kutusuna "email adresini" girer
     And kullanici sifre kutusuna "sifresini" girer
     And kullanici sifre tekrar kutusuna "sifresini" girer
+    And kullanici kisisel verilerin korunmasini kabul eder
+    And kullanici devam butonuna tiklar
+
+  @GecersizIsimleGiris
+  Scenario: Kullanici gecersiz isim ile giris yapmayi dener
+    Given kullanici "kitapyurdu" adresine gider
+    And kullanici uye ol linkine tiklar
+    And kullanici ad kutusuna gecersiz isim girer
+    And kullanici soyad kutusuna "soyadini" girer
+    And kullanici email kutusuna "email adresini" girer
+    And kullanici sifre kutusuna "sifresini" girer
+    And kullanici sifre tekrar kutusuna "sifresini" girer
+    And kullanici kisisel verilerin korunmasini kabul eder
     And kullanici devam butonuna tiklar
 
   @soyisimsizGiris
@@ -27,6 +45,7 @@ Feature: Kullanici gerekli bilgileri yazmadan giris yapamamali
     And kullanici email kutusuna "email adresini" girer
     And kullanici sifre kutusuna "sifresini" girer
     And kullanici sifre tekrar kutusuna "sifresini" girer
+    And kullanici kisisel verilerin korunmasini kabul eder
     And kullanici devam butonuna tiklar
 
   @emailsizGiris
@@ -38,6 +57,7 @@ Feature: Kullanici gerekli bilgileri yazmadan giris yapamamali
     And kullanici email kutusunu bos birakir
     And kullanici sifre kutusuna "sifresini" girer
     And kullanici sifre tekrar kutusuna "sifresini" girer
+    And kullanici kisisel verilerin korunmasini kabul eder
     And kullanici devam butonuna tiklar
 
   @sifresizGiris
@@ -49,6 +69,7 @@ Feature: Kullanici gerekli bilgileri yazmadan giris yapamamali
     And kullanici email kutusuna "email adresini" girer
     And kullanici sifre kutusunu bos birakir
     And kullanici sifre tekrar kutusuna "sifresini" girer
+    And kullanici kisisel verilerin korunmasini kabul eder
     And kullanici devam butonuna tiklar
 
   @tekrarSifresizGiris
@@ -60,6 +81,7 @@ Feature: Kullanici gerekli bilgileri yazmadan giris yapamamali
     And kullanici email kutusuna "email adresini" girer
     And kullanici sifre kutusuna "sifresini" girer
     And kullanici sifre tekrar kutusunu bos birakir
+    And kullanici kisisel verilerin korunmasini kabul eder
     And kullanici devam butonuna tiklar
 
   @yanlisSifreIleGiris
@@ -71,6 +93,7 @@ Feature: Kullanici gerekli bilgileri yazmadan giris yapamamali
     And kullanici email kutusuna "email adresini" girer
     And kullanici sifre kutusuna "sifresini" girer
     And kullanici sifre tekrar kutusuna "sifresini" yanlis girer
+    And kullanici kisisel verilerin korunmasini kabul eder
     And kullanici devam butonuna tiklar
 
   @kisiselVerileriKabulEtmedenGiris

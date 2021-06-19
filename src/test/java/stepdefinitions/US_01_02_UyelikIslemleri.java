@@ -10,6 +10,7 @@ import utilities.Driver;
 public class US_01_02_UyelikIslemleri {
 
     Page page=new Page();
+
     @Given("kullanici {string} adresine gider")
     public void kullanici_adresine_gider(String string) {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
@@ -28,6 +29,11 @@ public class US_01_02_UyelikIslemleri {
 
     @Given("kullanici ad kutusunu bos birakir")
     public void kullanici_ad_kutusunu_bos_birakir() {}
+
+    @Given("kullanici ad kutusuna gecersiz isim girer")
+    public void kullanici_ad_kutusuna_gecersiz_isim_girer() {
+        page.adKutusu.sendKeys(ConfigurationReader.getProperty("gecersiz_ad"));
+    }
     
     @Given("kullanici soyad kutusuna {string} girer")
     public void kullanici_soyad_kutusuna_girer(String string) {
