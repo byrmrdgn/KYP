@@ -108,8 +108,20 @@ Feature: Kullanici gerekli bilgileri yazmadan uyelik islemi gerceklesmemeli
     And kullanici kisisel verilerin korunmasini kabul etmez
     And kullanici devam butonuna tiklar
 
+  @gecersizEmailIleGiris
+  Scenario: TC_011 Kullanici gecersiz email ile uye olmayi dener
+    Given kullanici "kitapyurdu" adresine gider
+    And kullanici uye ol linkine tiklar
+    And kullanici ad kutusuna "adini" girer
+    And kullanici soyad kutusuna "soyadini" girer
+    And kullanici email kutusuna gecersiz email girer
+    And kullanici sifre kutusuna "sifresini" girer
+    And kullanici sifre tekrar kutusuna "sifresini" girer
+    And kullanici kisisel verilerin korunmasini kabul eder
+    And kullanici devam butonuna tiklar
+
   @yanlisSifreIleGiris
-  Scenario: TC_011 Kullanici yanlis sifre yazarak uye olmayi dener
+  Scenario: TC_012 Kullanici yanlis sifre yazarak uye olmayi dener
     Given kullanici "kitapyurdu" adresine gider
     And kullanici uye ol linkine tiklar
     And kullanici ad kutusuna "adini" girer
@@ -120,11 +132,11 @@ Feature: Kullanici gerekli bilgileri yazmadan uyelik islemi gerceklesmemeli
     And kullanici kisisel verilerin korunmasini kabul eder
     And kullanici devam butonuna tiklar
 
-  @GecerliUyelik
-  Scenario: TC_012 Kullanici kosullari yerine getirerek uye olur
+  @ayniEmailIleUyelik
+  Scenario: TC_013 Kullanici ayni email adresi ile yeni bilgiler kullanarak uye olmayi dener
     Given kullanici "kitapyurdu" adresine gider
     And kullanici uye ol linkine tiklar
-    And kullanici ad kutusuna "adini" girer
+    And kullanici ad kutusuna farkli bir "ad" girer
     And kullanici soyad kutusuna "soyadini" girer
     And kullanici email kutusuna "email adresini" girer
     And kullanici sifre kutusuna "sifresini" girer
@@ -132,11 +144,11 @@ Feature: Kullanici gerekli bilgileri yazmadan uyelik islemi gerceklesmemeli
     And kullanici kisisel verilerin korunmasini kabul eder
     And kullanici devam butonuna tiklar
 
-  @ayniEmailIleUyelik
-  Scenario: TC_013 Kullanici ayni email adresi ile yeni bilgiler kullanarak uye olmayi dener
+  @GecerliUyelik
+  Scenario: Kullanici kosullari yerine getirerek uye olur
     Given kullanici "kitapyurdu" adresine gider
     And kullanici uye ol linkine tiklar
-    And kullanici ad kutusuna farkli bir "ad" girer
+    And kullanici ad kutusuna "adini" girer
     And kullanici soyad kutusuna "soyadini" girer
     And kullanici email kutusuna "email adresini" girer
     And kullanici sifre kutusuna "sifresini" girer

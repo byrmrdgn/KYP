@@ -72,6 +72,11 @@ public class US_01_02_UyelikIslemleri {
     @Given("kullanici email kutusunu bos birakir")
     public void kullanici_email_kutusunu_bos_birakir() {}
 
+    @Given("kullanici email kutusuna gecersiz email girer")
+    public void kullanici_email_kutusuna_gevecersiz_email_girer() {
+        page.emailKutusu.sendKeys(ConfigurationReader.getProperty("gecersiz_email"));
+    }
+
     @Given("kullanici sifre kutusunu bos birakir")
     public void kullanici_sifre_kutusunu_bos_birakir() {}
 
