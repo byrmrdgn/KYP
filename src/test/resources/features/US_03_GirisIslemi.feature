@@ -8,11 +8,19 @@ Feature: Kullanici Uye olarak sisteme giris yapar
     And kullanici giris yap butonuna tiklar
 
   @epostasizGirisIslemi
-  Scenario: Kullanici uye olarak sisteme giris yapmayi dener
+  Scenario: Kullanici uye olarak sisteme e posta adresini yazmadan giris yapmayi dener
     Given kullanici "kitapyurdu" adresine gider
     And kullanici giris yap linkine tiklar
     And kullanici email kutusunu bos birakir
     And kullanici sifre kutusuna "sifresini" girer
+    And kullanici giris yap butonuna tiklar
+
+  @sifresizGirisIslemi
+  Scenario: Kullanici uye olarak sisteme sifresini yazmadan giris yapmayi dener
+    Given kullanici "kitapyurdu" adresine gider
+    And kullanici giris yap linkine tiklar
+    And kullanici email kutusuna "email adresini" girer
+    And kullanici sifre kutusunu bos birakir
     And kullanici giris yap butonuna tiklar
 
 @basariliGirisIslemi
