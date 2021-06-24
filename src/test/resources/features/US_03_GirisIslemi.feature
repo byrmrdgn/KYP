@@ -5,7 +5,15 @@ Feature: Kullanici Uye olarak sisteme giris yapar
   Scenario: Kullanici hicbir veri girmeden giris yapmayi dener
     Given kullanici "kitapyurdu" adresine gider
     And kullanici giris yap linkine tiklar
-    And kullanici giris yap butonuna tiklar
+    Then kullanici giris yap butonuna tiklar
+
+  @sifremiUnuttum
+  Scenario: Kullanici sifremi unuttum linkine tiklayarak sifresine ulasmayi dener
+    Given kullanici "kitapyurdu" adresine gider
+    And kullanici giris yap linkine tiklar
+    And kullanici email kutusuna "email adresini" girer
+    And kullanici sifre kutusunu bos birakir
+    Then sifremi unuttum linkine tiklar
 
   @epostasizGirisIslemi
   Scenario: Kullanici uye olarak sisteme e posta adresini yazmadan giris yapmayi dener

@@ -1,7 +1,6 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import pages.Page;
 import utilities.ConfigurationReader;
 import utilities.Driver;
@@ -48,7 +47,7 @@ public class US_01_02_UyelikIslemleri {
 
     @Given("kullanici sifre kutusuna {string} girer")
     public void kullanici_sifre_kutusuna_girer(String string) {
-        page.salasananLaatikko.sendKeys(ConfigurationReader.getProperty("dogru_sifre"));
+        page.sifreKutusu.sendKeys(ConfigurationReader.getProperty("dogru_sifre"));
     }
 
     @Given("kullanici sifre tekrar kutusuna {string} girer")

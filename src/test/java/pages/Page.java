@@ -29,7 +29,7 @@ public class Page {
     public WebElement emailKutusu;
 
     @FindBy(name = "password")
-    public WebElement salasananLaatikko;
+    public WebElement sifreKutusu;
 
     @FindBy(name = "confirm")
     public WebElement sifreTekrarKutusu;
@@ -42,4 +42,7 @@ public class Page {
 
     @FindBy(xpath = "//button[@role='button']")
     public WebElement girisYapButonu;
+
+    @FindBy(partialLinkText = "Şifremi Unuttum")
+    public WebElement sifremiUnuttum;
 }
