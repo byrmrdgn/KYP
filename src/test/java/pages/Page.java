@@ -45,4 +45,9 @@ public class Page {
 
     @FindBy(partialLinkText = "Şifremi Unuttum")
     public WebElement sifremiUnuttum;
+
+    @FindBy(xpath = "//*[@id=\"login\"]/div[2]/i")
+    public WebElement gözSimgesi;
+
+
 }

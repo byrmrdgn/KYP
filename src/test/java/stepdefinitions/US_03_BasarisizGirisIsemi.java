@@ -21,4 +21,14 @@ public class US_03_BasarisizGirisIsemi {
     public void sifremi_unuttum_linkine_tiklar() {
         page.sifremiUnuttum.click();
     }
+
+    @Given("kullanici sifre kutusundaki göz simgesine tiklar")
+    public void kullanici_sifre_kutusundaki_göz_simgesine_tiklar() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        page.gözSimgesi.click();
+    }
 }
