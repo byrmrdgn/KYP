@@ -49,5 +49,8 @@ public class Page {
     @FindBy(xpath = "//*[@id=\"login\"]/div[2]/i")
     public WebElement gözSimgesi;
 
+    @FindBy(className = "ky-checkbox-input")
+    public WebElement beniHatirla;
+
 
 }

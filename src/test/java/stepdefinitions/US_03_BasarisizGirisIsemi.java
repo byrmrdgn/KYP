@@ -31,4 +31,9 @@ public class US_03_BasarisizGirisIsemi {
         }
         page.gözSimgesi.click();
     }
+
+    @Given("kullanici beni hatirla kutusuna tiklar")
+    public void kullanici_beni_hatirla_kutusuna_tiklar() {
+        page.beniHatirla.click();
+    }
 }
