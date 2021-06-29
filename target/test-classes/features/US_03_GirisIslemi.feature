@@ -40,14 +40,14 @@ Feature: Kullanici Uye olarak sisteme giris yapar
     And kullanici sifre kutusundaki göz simgesine tiklar
 
   @beniHatirla
-  Scenario: Kullanici uye olarak sisteme giris yapmayi dener
+  Scenario: Kullanici beni hatirla kutusunu tiklayarak giris yapmayi dener
     Given kullanici "kitapyurdu" adresine gider
     And kullanici giris yap linkine tiklar
     And kullanici email kutusuna "email adresini" girer
     And kullanici sifre kutusuna "sifresini" girer
     And kullanici beni hatirla kutusuna tiklar
 
-@basariliGirisIslemi
+  @basariliGirisIslemi
   Scenario: Kullanici uye olarak sisteme giris yapmayi dener
     Given kullanici "kitapyurdu" adresine gider
     And kullanici giris yap linkine tiklar
