@@ -52,5 +52,8 @@ public class Page {
     @FindBy(className = "ky-checkbox-input")
     public WebElement beniHatirla;
 
+    @FindBy(xpath = "//*[.='Bahattin Degerli']")
+    public WebElement uyeIsmiDropdown;
+
 
 }
